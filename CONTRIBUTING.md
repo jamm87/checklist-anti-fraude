@@ -9,11 +9,22 @@ Abre un [issue](https://github.com/jamm87/antifraude/issues/new) y cuéntanos:
 - Qué hay que cambiar y en qué paso.
 - La **fuente oficial** que lo respalda (BOE, Banco de España, INCIBE, AEPD, la web del organismo…).
 
-## Con un pull request
+## Editando el texto (lo más fácil)
+
+Todo el contenido de la guía está en Markdown en [`guia.md`](guia.md). Puedes editarlo desde la propia web de GitHub (icono del lápiz): GitHub crea el fork y el pull request por ti.
+
+1. Abre [`guia.md`](guia.md) y pulsa el lápiz.
+2. Haz el cambio y, en la descripción, enlaza la fuente oficial.
+3. Pulsa **Propose changes** y luego **Create pull request**.
+
+Quien mantiene el proyecto trasladará el cambio a la web (`index.html`) y, si aplica, a la hoja imprimible.
+
+## Cambios en la web
 
 1. Haz un fork y edita `index.html` (guía) o `imprimir.html` (hoja para imprimir). Los estilos están en `styles.css`.
-2. Prueba en local con `python3 -m http.server` y comprueba la vista de impresión del navegador (A4).
-3. Abre el pull request explicando el cambio y enlazando la fuente.
+2. Si cambias el texto, actualiza también `guia.md` para que ambos digan lo mismo.
+3. Prueba en local con `python3 -m http.server` y comprueba la vista de impresión del navegador (A4).
+4. Abre el pull request explicando el cambio y enlazando la fuente.
 
 ## Criterios
 
