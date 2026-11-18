@@ -9,19 +9,24 @@
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#1f3864">
 <meta name="referrer" content="no-referrer">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.svg?v=4" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=4">
 <style>
   /* Hoja: siempre clara, tinta negra, pensada para bolígrafo */
   body.sheet { background: #e9ecf3; color: #000; }
   .bar { position: sticky; top: 0; z-index: 5; background: #1f3864; color: #fff; }
   .bar .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; padding-top: .6rem; padding-bottom: .6rem; max-width: 52rem; }
   .bar p { margin: 0; font-size: .9rem; color: #dfe6f5; flex: 1 1 18rem; }
-  .bar .actions { flex: none; }
+  .bar .actions { flex: 0 1 auto; flex-wrap: wrap; }
   .btn.small { min-height: 44px; padding: .4rem 1rem; }
-  .btn.ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+  .bar .btn { display: inline-flex; align-items: center; font: inherit; font-weight: 650; cursor: pointer; text-decoration: none; border-radius: 10px; border: 2px solid transparent; }
+  .bar .btn.primary { background: #ffb454; color: #1a1d24; }
+  .bar .btn.primary:hover { background: #ffc477; }
+  .bar .btn.ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
+  .bar .btn.ghost:hover { background: rgba(255,255,255,.12); }
+  .bar :focus-visible { outline: 3px solid #ffb454; outline-offset: 3px; }
 
   .paper {
     background: #fff; max-width: 52rem; margin: 1.5rem auto 3rem; padding: 2rem 2.25rem;
@@ -35,10 +40,10 @@
   .sheet h2 { font-size: 1.1rem; margin: 1.3rem 0 .4rem; text-transform: uppercase; letter-spacing: .04em; }
 
   .item { break-inside: avoid; border: 1.5px solid #000; border-radius: 6px; padding: .6rem .9rem .3rem; margin: .7rem 0; }
-  .item-head { display: flex; align-items: center; gap: .6rem; margin-bottom: .2rem; }
+  .item-head { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin-bottom: .2rem; }
   .num { flex: none; width: 1.8rem; height: 1.8rem; border: 2px solid #000; border-radius: 50%; display: grid; place-items: center; font-weight: 750; }
   .item h3 { font-size: 1.05rem; margin: 0; flex: 1; }
-  .dur { font-size: .8rem; color: #333; white-space: nowrap; }
+  .dur { font-size: .8rem; color: #333; }
 
   .boxes { list-style: none; padding: 0; margin: .3rem 0; }
   .boxes li { margin: .3rem 0; padding-left: 1.75rem; position: relative; }
@@ -55,6 +60,8 @@
   .warn svg { width: 1.6rem; height: 1.6rem; flex: none; margin-top: .1rem; }
   .warn p { margin: 0; }
 
+  .table-wrap { overflow-x: auto; }
+  .table-wrap:focus-visible { outline: 3px solid #b35c00; outline-offset: 2px; }
   table { width: 100%; border-collapse: collapse; margin: .4rem 0; font-size: .92rem; }
   th, td { border: 1.5px solid #000; padding: .35rem .5rem; text-align: left; vertical-align: middle; height: 2.2rem; }
   th { font-size: .8rem; background: #eef1f7; font-weight: 650; }
@@ -83,26 +90,27 @@
 </style>
 </head>
 <body class="sheet">
+<a class="skip" href="#hoja">Saltar a la hoja</a>
 
-<div class="bar no-print">
-  <div class="wrap">
+<header class="bar no-print">
+  <nav class="wrap" aria-label="Acciones de la hoja">
     <p>Imprímela y rellénala <strong>a mano</strong>. No escribas nada en pantalla: esta web no guarda datos.</p>
     <div class="actions">
       <a class="btn ghost small" href="./">← Volver a la guía</a>
       <button class="btn primary small" type="button" id="btn-print" hidden>Imprimir (A4)</button>
     </div>
-  </div>
-</div>
+  </nav>
+</header>
 
-<main class="paper">
+<main class="paper" id="hoja">
 
-<header class="head">
+<div class="head">
   <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 3 7 12v18c0 15.5 10.6 27.6 25 31 14.4-3.4 25-15.5 25-31V12L32 3Z" fill="none" stroke="#000" stroke-width="4"/><path d="m20.5 32.5 8 8 15-16" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
   <div>
     <h1>Mi checklist antifraude</h1>
     <p>Marca cada casilla al terminar y anota la fecha.</p>
   </div>
-</header>
+</div>
 
 <div class="row"><span class="lbl">Nombre:</span><span class="line"></span><span class="lbl">Fecha de inicio:</span><span class="line short"></span></div>
 
@@ -151,14 +159,14 @@
 
 <section class="item" aria-labelledby="s4">
   <div class="item-head"><span class="num" aria-hidden="true">4</span><h3 id="s4">Lo que hay a mi nombre</h3><span class="dur">20 min · cada año</span></div>
-  <table>
+  <div class="table-wrap" role="region" tabindex="0" aria-label="Tabla de consultas de deudas a mi nombre"><table>
     <thead><tr><th scope="col">Consulta</th><th scope="col">Fecha</th><th scope="col">¿Todo reconocido?</th><th scope="col">Próxima revisión</th></tr></thead>
     <tbody>
       <tr><th scope="row">CIRBE (Banco de España)</th><td></td><td><span class="opt"><span class="tick"></span> Sí</span><span class="opt"><span class="tick"></span> No</span></td><td></td></tr>
       <tr><th scope="row">ASNEF (Equifax)</th><td></td><td><span class="opt"><span class="tick"></span> Sí</span><span class="opt"><span class="tick"></span> No</span></td><td></td></tr>
       <tr><th scope="row">BADEXCUG (Experian)</th><td></td><td><span class="opt"><span class="tick"></span> Sí</span><span class="opt"><span class="tick"></span> No</span></td><td></td></tr>
     </tbody>
-  </table>
+  </table></div>
 </section>
 
 <section class="item" aria-labelledby="s5">
@@ -175,7 +183,7 @@
 
 <section class="item" aria-labelledby="s6">
   <div class="item-head"><span class="num" aria-hidden="true">6</span><h3 id="s6">Alertas del banco</h3><span class="dur">10 min por entidad</span></div>
-  <table>
+  <div class="table-wrap" role="region" tabindex="0" aria-label="Tabla de alertas por entidad bancaria"><table>
     <thead><tr><th scope="col">Entidad</th><th scope="col">Avisos de cada movimiento y Bizum</th><th scope="col">Límites ajustados</th><th scope="col">Fecha</th></tr></thead>
     <tbody>
       <tr><td></td><td class="c"><span class="tick"></span></td><td class="c"><span class="tick"></span></td><td></td></tr>
@@ -183,7 +191,7 @@
       <tr><td></td><td class="c"><span class="tick"></span></td><td class="c"><span class="tick"></span></td><td></td></tr>
       <tr><td></td><td class="c"><span class="tick"></span></td><td class="c"><span class="tick"></span></td><td></td></tr>
     </tbody>
-  </table>
+  </table></div>
   <ul class="boxes cols">
     <li>Sé que <strong>para recibir un Bizum nunca tengo que aceptar nada</strong>.</li>
     <li>Reviso mis cuentas una vez por semana.</li>
@@ -203,7 +211,7 @@
 <section class="sos pb" aria-labelledby="sos-h">
   <h2 id="sos-h">Si algo sale mal: teléfonos y pasos</h2>
   <p class="small">Apunta los números <strong>sacados de la tarjeta o la app oficial</strong>, para tenerlos a mano si no puedes usar el móvil. Nunca los copies de un SMS, correo o llamada.</p>
-  <table>
+  <div class="table-wrap" role="region" tabindex="0" aria-label="Tabla de teléfonos de emergencia"><table>
     <thead><tr><th scope="col" style="width:42%">Entidad / servicio</th><th scope="col">Teléfono de bloqueo o atención</th></tr></thead>
     <tbody>
       <tr><th scope="row">Banco 1:</th><td></td></tr>
@@ -213,7 +221,7 @@
       <tr><th scope="row">Persona de confianza 1:</th><td></td></tr>
       <tr><th scope="row">Persona de confianza 2:</th><td></td></tr>
     </tbody>
-  </table>
+  </table></div>
   <p><strong>Ayuda en ciberseguridad (INCIBE): 017</strong>, gratis, todos los días de 8 a 23 h. WhatsApp: 900 116 117.</p>
   <ol>
     <li>Llama al banco (número de tu tarjeta o app): bloquea tarjetas y accesos y pide que intenten recuperar la transferencia. Las horas cuentan.</li>

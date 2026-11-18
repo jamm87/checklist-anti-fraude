@@ -106,9 +106,9 @@ strong { font-weight: 650; }
   border: 1px solid var(--line); padding: 1.25rem 1.25rem 1rem; margin-top: -2rem; position: relative;
 }
 .toc h2 { font-size: 1rem; margin: 0 0 .5rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
-.toc ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); gap: .25rem 1rem; }
+.toc ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr)); gap: .25rem 1rem; }
 .toc li { margin: 0; }
-.toc a { display: flex; gap: .6rem; align-items: baseline; padding: .35rem 0; }
+.toc a { display: flex; overflow-wrap: anywhere; gap: .6rem; align-items: baseline; padding: .35rem 0; }
 .toc .n { font-weight: 700; color: var(--accent); min-width: 1.2rem; }
 .toc .extra { margin-top: .75rem; padding-top: .75rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
 
@@ -152,7 +152,7 @@ li::marker { color: var(--accent); }
 /* ---------- Repaso ---------- */
 .review { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.25rem; margin: 2rem 0; }
 .review h2 { margin: 0 0 .75rem; font-size: 1.3rem; }
-.check { list-style: none; padding: 0; margin: 0 0 1rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); gap: .25rem 1.5rem; }
+.check { list-style: none; padding: 0; margin: 0 0 1rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr)); gap: .25rem 1.5rem; }
 .check li { display: flex; gap: .6rem; align-items: flex-start; margin: .35rem 0; }
 .check li::before {
   content: ""; flex: none; width: 1.15rem; height: 1.15rem; margin-top: .2rem;
