@@ -7,7 +7,7 @@ Guía práctica para protegerte de estafas y suplantación de identidad, con hoj
 Web estática, sin dependencias, sin cookies, sin analítica y sin formularios.
 
 - `index.html`: guía completa (7 pasos, siguiente nivel, qué hacer si algo sale mal). Modo claro y oscuro.
-- `imprimir.html`: hoja A4 para imprimir y rellenar a mano (3 páginas). No tiene campos en pantalla: nada se guarda en el dispositivo.
+- `imprimir.html`: hoja A4 para imprimir y rellenar a mano (3 páginas + 1 de notas). No tiene campos en pantalla: nada se guarda en el dispositivo.
 - `styles.css`: estilos compartidos y de impresión.
 - `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`: iconos.
 

@@ -75,6 +75,9 @@
   .sos li { margin: .3rem 0; }
   .small { font-size: .82rem; color: #222; }
   .pb { break-before: page; }
+  .notes { break-inside: avoid; }
+  .notes .small { margin: 0 0 .2rem; }
+  .ruled span { display: block; height: 2rem; border-bottom: 1.5px solid #000; }
   .foot { margin-top: 1.2rem; border-top: 1px solid #999; padding-top: .5rem; }
 
   @media (max-width: 40rem) { .paper { padding: 1.25rem 1rem; margin: 0 0 2rem; border-radius: 0; } }
@@ -248,6 +251,13 @@
 </section>
 
 <p class="small foot">Usa siempre los enlaces oficiales de la guía, nunca los de SMS, correos o llamadas inesperadas. No es asesoramiento legal. Guía completa con enlaces: <strong>jamm87.github.io/antifraude</strong>. Checklist original de Erica Brescia (x.com/ericabrescia), adaptado a España por Mike Arias (x.com/mike_arias) ·Actualizado en noviembre de 2026.</p>
+
+<section class="notes pb" aria-labelledby="notas-h">
+  <h2 id="notas-h">Notas</h2>
+  <p class="small">Dudas, cosas pendientes, a quién ayudar, qué revisar la próxima vez…</p>
+  <div class="ruled" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</section>
+
 </main>
 <script>
   var b = document.getElementById('btn-print');

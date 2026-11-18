@@ -21,6 +21,6 @@ Abre un [issue](https://github.com/jamm87/antifraude/issues/new) y cuéntanos:
 - **Lenguaje claro**, pensado para cualquier persona, también para nuestros mayores.
 - **Accesible**: buen contraste, textos de enlace descriptivos, que funcione sin JavaScript y con lector de pantalla.
 - **Privacidad**: la web no debe recoger ningún dato. Nada de cookies, analítica, formularios ni recursos de terceros.
-- Si un cambio afecta a la guía, revisa si también hay que tocar la hoja imprimible, y que siga ocupando 3 páginas A4.
+- Si un cambio afecta a la guía, revisa si también hay que tocar la hoja imprimible, y que siga ocupando 4 páginas A4 (la última, de notas).
 
 Nunca publiques en un issue datos personales, capturas con números de cuenta ni detalles de una estafa que te afecte directamente.
