@@ -2,7 +2,7 @@
 
 > Basado en el [checklist original de Erica Brescia](https://x.com/ericabrescia/status/2116296188962144459) y adaptado a España por [Mike Arias](https://x.com/mike_arias/status/2122958905756004706) ([@mike_arias](https://x.com/mike_arias/)).
 >
-> Versión web: https://jamm87.github.io/antifraude/ · Hoja para imprimir y rellenar a mano: https://jamm87.github.io/antifraude/imprimir.html
+> Versión web: https://jamm87.github.io/checklist-anti-fraude/ · Hoja para imprimir y rellenar a mano: https://jamm87.github.io/checklist-anti-fraude/imprimir.html
 
 Una tarde de trabajo no es mucho tiempo, para ponérselo mucho más difícil a los estafadores. Incluye siete pasos básicos, un nivel extra opcional y qué hacer si algo sale mal.
 
@@ -149,4 +149,4 @@ Usa los enlaces oficiales de esta guía, nunca los de SMS, correos o llamadas in
 
 **Fuente.** Adaptado al español y a España por [Mike Arias](https://x.com/mike_arias/) ([publicación de la adaptación](https://x.com/mike_arias/status/2122958905756004706)) a partir del estupendo [checklist original de Erica Brescia](https://x.com/ericabrescia/status/2116296188962144459) (Redpoint), publicado en X el 30 de octubre de 2026.
 
-¿Ves algo mejorable? Lee [CONTRIBUTING.md](CONTRIBUTING.md) y abre un [issue](https://github.com/jamm87/antifraude/issues/new) o un pull request.
+¿Ves algo mejorable? Lee [CONTRIBUTING.md](CONTRIBUTING.md) y abre un [issue](https://github.com/jamm87/checklist-anti-fraude/issues/new) o un pull request.

@@ -4,7 +4,7 @@
 
 ## Sin saber programar
 
-Abre un [issue](https://github.com/jamm87/antifraude/issues/new) y cuéntanos:
+Abre un [issue](https://github.com/jamm87/checklist-anti-fraude/issues/new) y cuéntanos:
 
 - Qué hay que cambiar y en qué paso.
 - La **fuente oficial** que lo respalda (BOE, Banco de España, INCIBE, AEPD, la web del organismo…).

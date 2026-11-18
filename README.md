@@ -2,7 +2,7 @@
 
 Guía práctica para protegerte de estafas y suplantación de identidad, con hoja para imprimir y rellenar a mano.
 
-**Web:** https://jamm87.github.io/antifraude/
+**Web:** https://jamm87.github.io/checklist-anti-fraude/
 
 Web estática, sin dependencias, sin cookies, sin analítica y sin formularios.
 
