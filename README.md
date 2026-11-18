@@ -19,3 +19,7 @@ Probar en local: `python3 -m http.server` y abrir http://localhost:8000.
 ¿Una estafa nueva, un enlace mejor, un dato que ha cambiado? Lee [CONTRIBUTING.md](CONTRIBUTING.md) y abre un issue o un pull request.
 
 Créditos: checklist original de [Erica Brescia](https://x.com/ericabrescia/status/2116296188962144459), adaptado a España por [Mike Arias](https://x.com/mike_arias/) ([publicación](https://x.com/mike_arias/status/2122958905756004706)).
+
+## Autoría
+
+Proyecto mantenido por [@jamm87](https://github.com/jamm87), desarrollado con ayuda de [Claude Code](https://claude.com/claude-code). Contenido original de [Erica Brescia](https://x.com/ericabrescia/status/2116296188962144459), adaptado a España por [Mike Arias](https://x.com/mike_arias/).
