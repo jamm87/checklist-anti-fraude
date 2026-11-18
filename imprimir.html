@@ -1,181 +1,245 @@
 <!doctype html>
-<html lang="es" data-print>
+<html lang="es" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hoja para imprimir: checklist antifraude</title>
+<title>Hoja para imprimir · Checklist antifraude</title>
+<meta name="description" content="Hoja A4 para imprimir y rellenar a mano con el checklist antifraude.">
 <meta name="robots" content="noindex">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#1f3864">
 <meta name="referrer" content="no-referrer">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="styles.css">
 <style>
-  :root { --bg:#fff; --text:#000; --muted:#222; --heading:#000; --link:#0b4fb3; --line:#777; --soft:#fff; --warn:#fff; }
-  body { font-size: 1rem; }
-  h1 { font-size: 1.6rem; margin-top: .5rem; }
-  h2 { font-size: 1.15rem; margin: 1.4rem 0 .3rem; border-bottom: 2px solid #000; padding-bottom: .2rem; }
-  .step { break-inside: avoid; }
-  .step ul { list-style: none; padding: 0; margin: .3rem 0; }
-  .step li { margin: .35rem 0; padding-left: 2rem; position: relative; }
-  .step li::before { content: ""; position: absolute; left: 0; top: .15em; width: 1.1rem; height: 1.1rem; border: 2px solid #000; }
-  .row { display: flex; align-items: flex-end; gap: .5rem; margin: .7rem 0; }
-  .row label { white-space: nowrap; }
-  .line { flex: 1; border-bottom: 1.5px solid #000; min-height: 1.6rem; }
-  .line.short { flex: 0 0 9rem; }
-  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.5rem; }
-  .warn { border: 2.5px solid #000; padding: .6rem 1rem; margin: 1rem 0; }
-  .warn strong { text-transform: uppercase; }
+  /* Hoja: siempre clara, tinta negra, pensada para bolígrafo */
+  body.sheet { background: #e9ecf3; color: #000; }
+  .bar { position: sticky; top: 0; z-index: 5; background: #1f3864; color: #fff; }
+  .bar .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; padding-top: .6rem; padding-bottom: .6rem; max-width: 52rem; }
+  .bar p { margin: 0; font-size: .9rem; color: #dfe6f5; flex: 1 1 18rem; }
+  .bar .actions { flex: none; }
+  .btn.small { min-height: 44px; padding: .4rem 1rem; }
+  .btn.ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+
+  .paper {
+    background: #fff; max-width: 52rem; margin: 1.5rem auto 3rem; padding: 2rem 2.25rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,.08), 0 12px 32px rgba(20,30,60,.12); border-radius: 4px;
+  }
+  .sheet h1, .sheet h2, .sheet h3 { color: #000; }
+  .head { display: flex; align-items: center; gap: .75rem; border-bottom: 3px solid #1f3864; padding-bottom: .6rem; margin-bottom: .8rem; }
+  .head svg { width: 2.4rem; height: 2.4rem; flex: none; }
+  .head h1 { font-size: 1.6rem; margin: 0; }
+  .head p { margin: 0; font-size: .85rem; color: #333; }
+  .sheet h2 { font-size: 1.1rem; margin: 1.3rem 0 .4rem; text-transform: uppercase; letter-spacing: .04em; }
+
+  .item { break-inside: avoid; border: 1.5px solid #000; border-radius: 6px; padding: .6rem .9rem .3rem; margin: .7rem 0; }
+  .item-head { display: flex; align-items: center; gap: .6rem; margin-bottom: .2rem; }
+  .num { flex: none; width: 1.8rem; height: 1.8rem; border: 2px solid #000; border-radius: 50%; display: grid; place-items: center; font-weight: 750; }
+  .item h3 { font-size: 1.05rem; margin: 0; flex: 1; }
+  .dur { font-size: .8rem; color: #333; white-space: nowrap; }
+
+  .boxes { list-style: none; padding: 0; margin: .3rem 0; }
+  .boxes li { margin: .3rem 0; padding-left: 1.75rem; position: relative; }
+  .boxes li::before { content: ""; position: absolute; left: 0; top: .2em; width: 1.05rem; height: 1.05rem; border: 2px solid #000; border-radius: 3px; }
+  .boxes li::marker { content: none; }
+  .cols { columns: 2 16rem; column-gap: 1.5rem; }
+
+  .row { display: flex; flex-wrap: wrap; align-items: flex-end; gap: .25rem .5rem; margin: .65rem 0; }
+  .row .lbl { font-weight: 600; font-size: .92rem; }
+  .line { flex: 1 1 10rem; border-bottom: 1.5px solid #000; min-height: 1.6rem; }
+  .line.short { flex: 0 1 9rem; min-width: 7rem; }
+
+  .warn { display: flex; gap: .75rem; border: 2.5px solid #000; border-radius: 6px; padding: .6rem .9rem; margin: .8rem 0; font-size: .92rem; }
+  .warn svg { width: 1.6rem; height: 1.6rem; flex: none; margin-top: .1rem; }
+  .warn p { margin: 0; }
+
+  table { width: 100%; border-collapse: collapse; margin: .4rem 0; font-size: .92rem; }
+  th, td { border: 1.5px solid #000; padding: .35rem .5rem; text-align: left; vertical-align: middle; height: 2.2rem; }
+  th { font-size: .8rem; background: #eef1f7; font-weight: 650; }
+  td.c { text-align: center; }
+  .tick { display: inline-block; width: 1rem; height: 1rem; border: 2px solid #000; border-radius: 3px; vertical-align: middle; }
+  .opt { white-space: nowrap; margin-right: .6rem; }
+
+  .sos { border: 2.5px solid #000; border-left-width: 8px; border-radius: 6px; padding: .5rem 1rem .3rem; margin: .8rem 0; }
+  .sos h2 { margin-top: .3rem; }
+  .sos ol { padding-left: 1.2rem; margin: .4rem 0; }
+  .sos li { margin: .3rem 0; }
+  .small { font-size: .82rem; color: #222; }
   .pb { break-before: page; }
-  .small { font-size: .85rem; }
-  table { width: 100%; border-collapse: collapse; margin: .5rem 0; }
-  th, td { border: 1.5px solid #000; padding: .45rem .5rem; text-align: left; vertical-align: bottom; height: 2.3rem; }
-  th { font-size: .85rem; background: #eee; }
-  @media screen { .wrap { max-width: 50rem; } .sheet-bar { position: sticky; top: 0; background: #fff; padding: .5rem 0; border-bottom: 1px solid #ccc; } }
-  @media print { html { font-size: 10pt; } .box, .warn { border-color: #000; } th, td { height: 2rem; } }
+  .foot { margin-top: 1.2rem; border-top: 1px solid #999; padding-top: .5rem; }
+
+  @media (max-width: 40rem) { .paper { padding: 1.25rem 1rem; margin: 0 0 2rem; border-radius: 0; } }
+  @media print {
+    html { font-size: 10pt; }
+    body.sheet { background: #fff; }
+    .paper { box-shadow: none; margin: 0; padding: 0; max-width: none; border-radius: 0; }
+    th { background: #f0f0f0; }
+    .head { border-bottom-color: #000; }
+    a { color: #000; text-decoration: none; }
+    .sheet a[href^="http"]::after { content: none; }
+  }
 </style>
 </head>
-<body>
-<main class="wrap">
+<body class="sheet">
 
-<div class="actions no-print sheet-bar">
-  <a class="btn alt" href="index.html">← Volver a la guía</a>
-  <button class="btn" type="button" id="btn-print" hidden>Imprimir (A4)</button>
-</div>
-<p class="no-print">Imprime esta hoja y rellénala <strong>a mano con bolígrafo</strong>. No escribas nada en la pantalla: esta web no guarda datos. Guarda el papel en un sitio seguro de casa.</p>
-
-<h1>Mi checklist antifraude</h1>
-<div class="row"><label>Nombre:</label><span class="line"></span><label>Fecha de inicio:</label><span class="line short"></span></div>
-
-<div class="warn">
-  <strong>Hoja con datos sensibles.</strong> Rellénala solo a mano: en papel no se puede hackear ni filtrar. No la fotografíes, no la escanees y guárdala bajo llave, lejos de tarjetas y documentos de identidad. Aun así, no escribas aquí tu contraseña maestra, PINs de tarjeta ni números completos de tarjeta o IBAN.
-</div>
-
-<h2>Pasos (marca ☐ al terminar y anota la fecha)</h2>
-
-<section class="step">
-<h3>1. Palabra clave en familia <span class="small">(5 min)</span></h3>
-<ul>
-  <li>Hemos elegido una palabra que no está en internet y la hemos compartido <strong>en persona</strong>.</li>
-  <li>Todos sabemos: ante cualquier petición urgente, <strong>cuelgo y llamo yo</strong> a un número que ya tengo guardado.</li>
-</ul>
-<div class="row"><label>Palabra clave:</label><span class="line"></span></div>
-<div class="row"><label>Personas que la conocen:</label><span class="line"></span></div>
-<div class="row"><label>Fecha:</label><span class="line short"></span></div>
-</section>
-
-<section class="step">
-<h3>2. Correo y cuentas clave <span class="small">(20–30 min)</span></h3>
-<ul>
-  <li>Gestor de contraseñas instalado y contraseñas repetidas arregladas (primero correo y banco).</li>
-  <li>Passkey o app de autenticación activada. SMS solo si no hay otra opción.</li>
-  <li>Teléfono y correo de recuperación al día.</li>
-  <li>Dispositivos con sesión iniciada revisados; WhatsApp: verificación en dos pasos activada.</li>
-  <li>Códigos de recuperación guardados en lugar seguro.</li>
-  <li>Actualizaciones automáticas activadas.</li>
-</ul>
-<div class="row"><label>Códigos de recuperación guardados en:</label><span class="line"></span></div>
-<div class="row"><label>Gestor de contraseñas usado:</label><span class="line"></span><label>Fecha:</label><span class="line short"></span></div>
-</section>
-
-<section class="step">
-<h3>3. Número de móvil <span class="small">(10 min)</span></h3>
-<ul>
-  <li>Datos de contacto del área de cliente del operador revisados.</li>
-  <li>Llamada hecha: protecciones contra duplicado de SIM y portabilidades activadas.</li>
-  <li>PIN de la SIM activado y cambiado.</li>
-  <li>Operaciones del banco confirmadas en su app, no por SMS.</li>
-</ul>
-<div class="row"><label>Operador:</label><span class="line"></span><label>Fecha:</label><span class="line short"></span></div>
-<div class="row"><label>Nº de atención al cliente / contraseña o PIN de portabilidad:</label><span class="line"></span></div>
-</section>
-
-<section class="step">
-<h3>4. Lo que hay a mi nombre <span class="small">(20 min, repetir cada año)</span></h3>
-<table>
-  <thead><tr><th>Consulta</th><th>Fecha</th><th>¿Todo reconocido?</th><th>Próxima revisión</th></tr></thead>
-  <tbody>
-    <tr><td>CIRBE (Banco de España)</td><td></td><td>☐ Sí &nbsp; ☐ No</td><td></td></tr>
-    <tr><td>ASNEF (Equifax)</td><td></td><td>☐ Sí &nbsp; ☐ No</td><td></td></tr>
-    <tr><td>BADEXCUG (Experian)</td><td></td><td>☐ Sí &nbsp; ☐ No</td><td></td></tr>
-  </tbody>
-</table>
-
-<h3 class="pb">5. Hacienda y Seguridad Social <span class="small">(15–20 min)</span></h3>
-<ul>
-  <li>Cl@ve registrada, app Cl@ve instalada (nivel avanzado si es posible).</li>
-  <li>Certificado digital / DNIe con contraseña y solo en mis equipos.</li>
-  <li>Gestoría: trabaja con apoderamiento, no con mis claves.</li>
-  <li>Avisos por correo de la DEHú activados.</li>
-  <li>Informe de vida laboral revisado (repetir cada año).</li>
-</ul>
-<div class="row"><label>Fecha:</label><span class="line short"></span></div>
-</section>
-
-<section class="step">
-<h3>6. Alertas del banco <span class="small">(10 min por entidad)</span></h3>
-<table>
-  <thead><tr><th>Entidad</th><th>Avisos de todo movimiento y Bizum</th><th>Límites ajustados</th><th>Fecha</th></tr></thead>
-  <tbody>
-    <tr><td></td><td>☐</td><td>☐</td><td></td></tr>
-    <tr><td></td><td>☐</td><td>☐</td><td></td></tr>
-    <tr><td></td><td>☐</td><td>☐</td><td></td></tr>
-    <tr><td></td><td>☐</td><td>☐</td><td></td></tr>
-  </tbody>
-</table>
-<ul>
-  <li>Sé que <strong>para recibir un Bizum nunca tengo que aceptar nada</strong>.</li>
-  <li>Reviso mis cuentas una vez por semana.</li>
-</ul>
-</section>
-
-<section class="step">
-<h3>7. Copias de mis documentos financieros <span class="small">(15 min + revisión trimestral)</span></h3>
-<ul>
-  <li>Extractos y certificados fiscales descargados de cada entidad, renta, datos fiscales y vida laboral.</li>
-  <li>Guardados en sitio cifrado, con segunda copia. No en carpeta compartida ni por correo.</li>
-</ul>
-<div class="row"><label>Dónde están mis copias (carpeta, disco, nube):</label><span class="line"></span></div>
-<div class="row"><label>Última copia:</label><span class="line short"></span><label>Dónde está la 2ª copia:</label><span class="line"></span></div>
-</section>
-
-<h2 class="pb">Si algo sale mal: teléfonos y pasos</h2>
-<p class="small">Apunta aquí los números <strong>sacados de la tarjeta o la app oficial</strong>, para tenerlos a mano si no puedes entrar al móvil. Nunca los copies de un SMS, correo o llamada.</p>
-<table>
-  <thead><tr><th>Entidad / servicio</th><th>Teléfono de bloqueo o atención</th></tr></thead>
-  <tbody>
-    <tr><td>Banco 1:</td><td></td></tr>
-    <tr><td>Banco 2:</td><td></td></tr>
-    <tr><td>Tarjeta / bróker:</td><td></td></tr>
-    <tr><td>Operador móvil:</td><td></td></tr>
-    <tr><td>Persona de confianza 1:</td><td></td></tr>
-    <tr><td>Persona de confianza 2:</td><td></td></tr>
-  </tbody>
-</table>
-<p><strong>Ciberseguridad (INCIBE):</strong> 017, gratis, todos los días de 8 a 23 h. WhatsApp: 900 116 117.</p>
-<ol>
-  <li>Llama al banco (número de tu tarjeta o app): bloquea tarjetas y accesos y pide que intenten recuperar la transferencia. Las horas cuentan.</li>
-  <li>Operaciones no autorizadas: comunícalo sin demora (máximo legal, 13 meses). Reclama por escrito al banco; si no responde, al Banco de España.</li>
-  <li>Cambia la contraseña del correo, cierra otras sesiones y revisa reenvíos y filtros.</li>
-  <li>Sin servicio en el móvil de repente: llama a tu operador desde otro teléfono.</li>
-  <li>Denuncia en Policía Nacional (online y firma en 72 h) o Guardia Civil. Guarda capturas, justificantes y números.</li>
-  <li>Deudas o contratos que no son tuyos: pide la supresión de datos con la denuncia; si no responden en un mes, reclama ante la AEPD.</li>
-</ol>
-
-<h2>Repaso final</h2>
-<div class="grid2">
-  <div>
-    <p>☐ Palabra clave acordada en familia</p>
-    <p>☐ Correo y cuentas clave con passkey y contraseñas únicas</p>
-    <p>☐ Línea móvil protegida con el operador y PIN de la SIM</p>
-    <p>☐ Deudas en CIRBE, ASNEF y BADEXCUG revisados</p>
-  </div>
-  <div>
-    <p>☐ Cl@ve y certificado protegidos, avisos de la DEHú activos</p>
-    <p>☐ Alertas y límites del banco activados</p>
-    <p>☐ Copias de tus documentos financieros guardadas</p>
+<div class="bar no-print">
+  <div class="wrap">
+    <p>Imprímela y rellénala <strong>a mano</strong>. No escribas nada en pantalla: esta web no guarda datos.</p>
+    <div class="actions">
+      <a class="btn ghost small" href="./">← Volver a la guía</a>
+      <button class="btn primary small" type="button" id="btn-print" hidden>Imprimir (A4)</button>
+    </div>
   </div>
 </div>
-<div class="row"><label>Completado el:</label><span class="line short"></span><label>Próxima revisión:</label><span class="line short"></span></div>
 
-<p class="small" style="margin-top:1.5rem">Usa siempre los enlaces oficiales de la guía, nunca los de SMS, correos o llamadas inesperadas. No es asesoramiento legal. Guía completa y enlaces: <strong>index.html</strong>. Adaptado del checklist original de Erica Brescia (Redpoint): <a href="https://x.com/mike_arias/status/2122958905756004706">https://x.com/mike_arias/status/2122958905756004706</a>. Actualizado noviembre 2026.</p>
+<main class="paper">
+
+<header class="head">
+  <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 3 7 12v18c0 15.5 10.6 27.6 25 31 14.4-3.4 25-15.5 25-31V12L32 3Z" fill="none" stroke="#000" stroke-width="4"/><path d="m20.5 32.5 8 8 15-16" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div>
+    <h1>Mi checklist antifraude</h1>
+    <p>Marca cada casilla al terminar y anota la fecha.</p>
+  </div>
+</header>
+
+<div class="row"><span class="lbl">Nombre:</span><span class="line"></span><span class="lbl">Fecha de inicio:</span><span class="line short"></span></div>
+
+<div class="warn" role="note">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3Z" fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v4M12 17h.01" stroke="#000" stroke-width="2.4" stroke-linecap="round"/></svg>
+  <p><strong>Hoja con datos sensibles.</strong> Rellénala solo a mano: en papel no se puede hackear ni filtrar. No la fotografíes, no la escanees y guárdala bajo llave, lejos de tarjetas y documentos de identidad. Aun así, no escribas aquí tu contraseña maestra, PINs de tarjeta ni números completos de tarjeta o IBAN.</p>
+</div>
+
+<h2>Los 7 pasos</h2>
+
+<section class="item" aria-labelledby="s1">
+  <div class="item-head"><span class="num" aria-hidden="true">1</span><h3 id="s1">Palabra clave en familia</h3><span class="dur">5 min</span></div>
+  <ul class="boxes">
+    <li>Hemos elegido una palabra que no está en internet y la hemos compartido <strong>en persona</strong>.</li>
+    <li>Todos sabemos: ante cualquier petición urgente, <strong>cuelgo y llamo yo</strong> a un número que ya tengo guardado.</li>
+  </ul>
+  <div class="row"><span class="lbl">Palabra clave:</span><span class="line"></span></div>
+  <div class="row"><span class="lbl">Personas que la conocen:</span><span class="line"></span><span class="lbl">Fecha:</span><span class="line short"></span></div>
+</section>
+
+<section class="item" aria-labelledby="s2">
+  <div class="item-head"><span class="num" aria-hidden="true">2</span><h3 id="s2">Correo y cuentas clave</h3><span class="dur">20–30 min</span></div>
+  <ul class="boxes cols">
+    <li>Gestor de contraseñas y contraseñas repetidas arregladas (primero correo y banco).</li>
+    <li>Passkey o app de autenticación activada. SMS solo si no hay otra opción.</li>
+    <li>Teléfono y correo de recuperación al día.</li>
+    <li>Sesiones revisadas; WhatsApp con verificación en dos pasos.</li>
+    <li>Códigos de recuperación guardados en lugar seguro.</li>
+    <li>Actualizaciones automáticas activadas.</li>
+  </ul>
+  <div class="row"><span class="lbl">Gestor de contraseñas usado:</span><span class="line"></span></div>
+  <div class="row"><span class="lbl">Códigos de recuperación guardados en:</span><span class="line"></span><span class="lbl">Fecha:</span><span class="line short"></span></div>
+</section>
+
+<section class="item" aria-labelledby="s3">
+  <div class="item-head"><span class="num" aria-hidden="true">3</span><h3 id="s3">Número de móvil</h3><span class="dur">10 min</span></div>
+  <ul class="boxes cols">
+    <li>Datos de contacto del área de cliente revisados.</li>
+    <li>Llamada hecha: protección contra duplicado de SIM y portabilidad.</li>
+    <li>PIN de la SIM activado y cambiado.</li>
+    <li>Operaciones del banco confirmadas en su app, no por SMS.</li>
+  </ul>
+  <div class="row"><span class="lbl">Operador:</span><span class="line"></span><span class="lbl">Fecha:</span><span class="line short"></span></div>
+  <div class="row"><span class="lbl">Contraseña o PIN de portabilidad del operador:</span><span class="line"></span></div>
+</section>
+
+<section class="item" aria-labelledby="s4">
+  <div class="item-head"><span class="num" aria-hidden="true">4</span><h3 id="s4">Lo que hay a mi nombre</h3><span class="dur">20 min · cada año</span></div>
+  <table>
+    <thead><tr><th scope="col">Consulta</th><th scope="col">Fecha</th><th scope="col">¿Todo reconocido?</th><th scope="col">Próxima revisión</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">CIRBE (Banco de España)</th><td></td><td><span class="opt"><span class="tick"></span> Sí</span><span class="opt"><span class="tick"></span> No</span></td><td></td></tr>
+      <tr><th scope="row">ASNEF (Equifax)</th><td></td><td><span class="opt"><span class="tick"></span> Sí</span><span class="opt"><span class="tick"></span> No</span></td><td></td></tr>
+      <tr><th scope="row">BADEXCUG (Experian)</th><td></td><td><span class="opt"><span class="tick"></span> Sí</span><span class="opt"><span class="tick"></span> No</span></td><td></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="item" aria-labelledby="s5">
+  <div class="item-head"><span class="num" aria-hidden="true">5</span><h3 id="s5">Hacienda y Seguridad Social</h3><span class="dur">15–20 min</span></div>
+  <ul class="boxes cols">
+    <li>Cl@ve registrada y app Cl@ve instalada (nivel avanzado si es posible).</li>
+    <li>Certificado digital / DNIe con contraseña y solo en mis equipos.</li>
+    <li>Gestoría con apoderamiento, no con mis claves.</li>
+    <li>Avisos por correo de la DEHú activados.</li>
+    <li>Informe de vida laboral revisado (cada año).</li>
+  </ul>
+  <div class="row"><span class="lbl">Fecha:</span><span class="line short"></span><span class="lbl">Próxima revisión de vida laboral:</span><span class="line short"></span></div>
+</section>
+
+<section class="item" aria-labelledby="s6">
+  <div class="item-head"><span class="num" aria-hidden="true">6</span><h3 id="s6">Alertas del banco</h3><span class="dur">10 min por entidad</span></div>
+  <table>
+    <thead><tr><th scope="col">Entidad</th><th scope="col">Avisos de cada movimiento y Bizum</th><th scope="col">Límites ajustados</th><th scope="col">Fecha</th></tr></thead>
+    <tbody>
+      <tr><td></td><td class="c"><span class="tick"></span></td><td class="c"><span class="tick"></span></td><td></td></tr>
+      <tr><td></td><td class="c"><span class="tick"></span></td><td class="c"><span class="tick"></span></td><td></td></tr>
+      <tr><td></td><td class="c"><span class="tick"></span></td><td class="c"><span class="tick"></span></td><td></td></tr>
+      <tr><td></td><td class="c"><span class="tick"></span></td><td class="c"><span class="tick"></span></td><td></td></tr>
+    </tbody>
+  </table>
+  <ul class="boxes cols">
+    <li>Sé que <strong>para recibir un Bizum nunca tengo que aceptar nada</strong>.</li>
+    <li>Reviso mis cuentas una vez por semana.</li>
+  </ul>
+</section>
+
+<section class="item" aria-labelledby="s7">
+  <div class="item-head"><span class="num" aria-hidden="true">7</span><h3 id="s7">Copias de mis documentos financieros</h3><span class="dur">15 min · cada trimestre</span></div>
+  <ul class="boxes">
+    <li>Extractos y certificados fiscales de cada entidad, renta, datos fiscales y vida laboral descargados.</li>
+    <li>Guardados en sitio cifrado, con segunda copia. No en carpeta compartida ni por correo.</li>
+  </ul>
+  <div class="row"><span class="lbl">Dónde está la copia principal:</span><span class="line"></span></div>
+  <div class="row"><span class="lbl">Dónde está la 2.ª copia:</span><span class="line"></span><span class="lbl">Última copia:</span><span class="line short"></span></div>
+</section>
+
+<section class="sos pb" aria-labelledby="sos-h">
+  <h2 id="sos-h">Si algo sale mal: teléfonos y pasos</h2>
+  <p class="small">Apunta los números <strong>sacados de la tarjeta o la app oficial</strong>, para tenerlos a mano si no puedes usar el móvil. Nunca los copies de un SMS, correo o llamada.</p>
+  <table>
+    <thead><tr><th scope="col" style="width:42%">Entidad / servicio</th><th scope="col">Teléfono de bloqueo o atención</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Banco 1:</th><td></td></tr>
+      <tr><th scope="row">Banco 2:</th><td></td></tr>
+      <tr><th scope="row">Tarjeta / bróker:</th><td></td></tr>
+      <tr><th scope="row">Operador móvil:</th><td></td></tr>
+      <tr><th scope="row">Persona de confianza 1:</th><td></td></tr>
+      <tr><th scope="row">Persona de confianza 2:</th><td></td></tr>
+    </tbody>
+  </table>
+  <p><strong>Ayuda en ciberseguridad (INCIBE): 017</strong>, gratis, todos los días de 8 a 23 h. WhatsApp: 900 116 117.</p>
+  <ol>
+    <li>Llama al banco (número de tu tarjeta o app): bloquea tarjetas y accesos y pide que intenten recuperar la transferencia. Las horas cuentan.</li>
+    <li>Operaciones no autorizadas: comunícalo sin demora (máximo legal, 13 meses). Reclama por escrito al banco; si no responde, al Banco de España.</li>
+    <li>Cambia la contraseña del correo, cierra otras sesiones y revisa reenvíos y filtros.</li>
+    <li>Sin servicio en el móvil de repente: llama a tu operador desde otro teléfono.</li>
+    <li>Denuncia en Policía Nacional (online y firma en 72 h) o Guardia Civil. Guarda capturas, justificantes y números.</li>
+    <li>Deudas o contratos que no son tuyos: pide la supresión de datos con la denuncia; si no responden en un mes, reclama ante la AEPD.</li>
+  </ol>
+</section>
+
+<section aria-labelledby="rep-h">
+  <h2 id="rep-h">Repaso final</h2>
+  <ul class="boxes cols">
+    <li>Palabra clave acordada en familia</li>
+    <li>Correo y cuentas clave con passkey y contraseñas únicas</li>
+    <li>Línea móvil protegida con el operador y PIN de la SIM</li>
+    <li>Deudas en CIRBE, ASNEF y BADEXCUG revisadas</li>
+    <li>Cl@ve y certificado protegidos, avisos de la DEHú activos</li>
+    <li>Alertas y límites del banco activados</li>
+    <li>Copias de mis documentos financieros guardadas</li>
+  </ul>
+  <div class="row"><span class="lbl">Completado el:</span><span class="line short"></span><span class="lbl">Próxima revisión completa:</span><span class="line short"></span></div>
+</section>
+
+<p class="small foot">Usa siempre los enlaces oficiales de la guía, nunca los de SMS, correos o llamadas inesperadas. No es asesoramiento legal. Guía completa con enlaces: <strong>jamm87.github.io/antifraude</strong>. Adaptado del checklist original de Erica Brescia (Redpoint) · x.com/mike_arias/status/2122958905756004706 · Actualizado en noviembre de 2026.</p>
 </main>
 <script>
   var b = document.getElementById('btn-print');
