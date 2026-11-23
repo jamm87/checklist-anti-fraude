@@ -7,33 +7,33 @@
 <meta name="description" content="Hoja A4 para imprimir y rellenar a mano con el checklist antifraude.">
 <meta name="robots" content="noindex">
 <meta name="color-scheme" content="light">
-<meta name="theme-color" content="#1f3864">
+<meta name="theme-color" content="#1a1714">
 <meta name="referrer" content="no-referrer">
-<link rel="icon" href="favicon.svg?v=4" type="image/svg+xml">
+<link rel="icon" href="favicon.svg?v=5" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 <style>
   /* Hoja: siempre clara, tinta negra, pensada para bolígrafo */
-  body.sheet { background: #e9ecf3; color: #000; }
-  .bar { position: sticky; top: 0; z-index: 5; background: #1f3864; color: #fff; }
+  body.sheet { background: #edebe9; color: #000; }
+  .bar { position: sticky; top: 0; z-index: 5; background: rgba(16,13,11,.78); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.1); color: #fff; }
   .bar .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; padding-top: .6rem; padding-bottom: .6rem; max-width: 52rem; }
-  .bar p { margin: 0; font-size: .9rem; color: #dfe6f5; flex: 1 1 18rem; }
+  .bar p { margin: 0; font-size: .9rem; color: rgba(255,255,255,.82); flex: 1 1 18rem; }
   .bar .actions { flex: 0 1 auto; flex-wrap: wrap; }
   .btn.small { min-height: 44px; padding: .4rem 1rem; }
   .bar .btn { display: inline-flex; align-items: center; font: inherit; font-weight: 650; cursor: pointer; text-decoration: none; border-radius: 10px; border: 2px solid transparent; }
-  .bar .btn.primary { background: #ffb454; color: #1a1d24; }
-  .bar .btn.primary:hover { background: #ffc477; }
+  .bar .btn.primary { background: #fe6e00; color: #1a1714; }
+  .bar .btn.primary:hover { background: #ffb74d; }
   .bar .btn.ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
   .bar .btn.ghost:hover { background: rgba(255,255,255,.12); }
-  .bar :focus-visible { outline: 3px solid #ffb454; outline-offset: 3px; }
+  .bar :focus-visible { outline: 3px solid #ffb74d; outline-offset: 3px; }
 
   .paper {
     background: #fff; max-width: 52rem; margin: 1.5rem auto 3rem; padding: 2rem 2.25rem;
     box-shadow: 0 2px 6px rgba(0,0,0,.08), 0 12px 32px rgba(20,30,60,.12); border-radius: 4px;
   }
   .sheet h1, .sheet h2, .sheet h3 { color: #000; }
-  .head { display: flex; align-items: center; gap: .75rem; border-bottom: 3px solid #1f3864; padding-bottom: .6rem; margin-bottom: .8rem; }
+  .head { display: flex; align-items: center; gap: .75rem; border-bottom: 3px solid #fe6e00; padding-bottom: .6rem; margin-bottom: .8rem; }
   .head svg { width: 2.4rem; height: 2.4rem; flex: none; }
   .head h1 { font-size: 1.6rem; margin: 0; }
   .head p { margin: 0; font-size: .85rem; color: #333; }
@@ -61,10 +61,10 @@
   .warn p { margin: 0; }
 
   .table-wrap { overflow-x: auto; }
-  .table-wrap:focus-visible { outline: 3px solid #b35c00; outline-offset: 2px; }
+  .table-wrap:focus-visible { outline: 3px solid #c2410c; outline-offset: 2px; }
   table { width: 100%; border-collapse: collapse; margin: .4rem 0; font-size: .92rem; }
   th, td { border: 1.5px solid #000; padding: .35rem .5rem; text-align: left; vertical-align: middle; height: 2.2rem; }
-  th { font-size: .8rem; background: #eef1f7; font-weight: 650; }
+  th { font-size: .8rem; background: #fff3ea; font-weight: 650; }
   td.c { text-align: center; }
   .tick { display: inline-block; width: 1rem; height: 1rem; border: 2px solid #000; border-radius: 3px; vertical-align: middle; }
   .opt { white-space: nowrap; margin-right: .6rem; }
